@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Formulario.MainPage">
+    <ScrollView>
+    <StackLayout>
+        <Image Source="images.png"
+               WidthRequest="150"
+               HeightRequest="150"/>
+        <!-- Campo de entrada de texto -->
+        <Entry 
+            x:Name="nombres"
+            Placeholder="Escribe tus Nombres"
+            Margin="20"/>
+        <Entry 
+            x:Name="apellido"
+            Placeholder="Escribe tus Apellido"
+            Margin="20"/>
+        <Entry 
+            x:Name="gmail"
+            Placeholder="Escribe tu Correo"
+               Keyboard="Email"
+                Margin="20"/>
+        <!-- Selector de fecha -->
+            <Label Text="Escribe tu fecha de Nacimiento"
+                   Margin="10"/>
+
+            <DatePicker 
+            x:Name="datepicker"
+                Margin="20"/>
+
+        <!-- Selector de opciones (puedes usar Picker o RadioButton por ejemplo) -->
+        <Picker x:Name="genero" 
+                Title="Selecciona Su Genero"
+                Margin="20">
+                
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                        <x:String>NO DEFINIDO</x:String>
+                        <x:String>HOMBRE</x:String>
+                        <x:String> MUJER</x:String>
+                      </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        
+
+        <!-- Otros campos del formulario (nombre, correo, etc.) -->
+
+     
+        <HorizontalStackLayout>
+            <CheckBox x:Name="chkAceptaPoliticas"/>
+            <Label Text="Acepto politicas "/>
+        </HorizontalStackLayout>
+
+        
+
+        <!-- Botón de envío del formulario -->
+        <Button 
+            x:Name="button"
+            Text="Enviar" Clicked="OnSubmitClicked" />
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
+
